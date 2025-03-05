@@ -14,6 +14,8 @@ const dot3 = document.querySelector('#dot3');
 const dot4 = document.querySelector('#dot4');
 
 
+let currentIndex = 1;
+
 imgContainers.forEach(img=>{
     let id = img.id;
     img.addEventListener('click',changeOnLeftClick(img, id))
@@ -36,23 +38,27 @@ function changeImgRightBtn(id) {
             img2.classList.add('hidden')
             img3.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 3;
             break;
 
         case '3':
             img3.classList.add('hidden')
             img4.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 4;
             break;
 
         case '4':
             img4.classList.add('hidden')
             img1.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 1;
             break;
         default:
             img1.classList.add('hidden')
             img2.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 2;
             break;
     }
 
@@ -74,24 +80,28 @@ function changeImgLeftBtn(id){
             img2.classList.add('hidden')
             img1.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 1;
             break;
 
         case '3':
             img3.classList.add('hidden')
             img2.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 2
             break;
 
         case '4':
             img4.classList.add('hidden')
             img3.classList.remove('hidden')
             changeDot(strImgNum)
+            currentIndex = 3;
             break;
         default:
             let num = '4'
             img1.classList.add('hidden')
             img4.classList.remove('hidden')
             changeDot(num)
+            currentIndex = 4;
             break;
 
     }
@@ -161,6 +171,7 @@ dots.forEach(dot=>{
         let index = dot.id.slice(3,4)
         changeDot(index)
         changePicture(index)
+        currentIndex = index;
     })
 })
 
@@ -172,3 +183,18 @@ function changePicture(idNo){
         }
     })
 }
+
+
+
+function autoChange() {
+    setInterval(() => {
+        // Calculate the next image index
+        currentIndex = (currentIndex % 4) + 1;  // Loops from 1 to 4
+
+        // Change the image and dot
+        changeDot(String(currentIndex));
+        changePicture(String(currentIndex));
+    }, 5000); // 5000ms = 5 seconds
+}
+
+autoChange()
