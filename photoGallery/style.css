@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.left, .right{
+    font-size: 4.5rem;
+    color: white;
+    cursor: pointer;
+}
+.img{
+    height: 600px;
+    width: 90vw;
+    margin: 1rem 0;
+    position: relative;
+}
+.img img{
+    height: 100%;
+    width: 100%;
+    
+}
+.image-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.hidden{
+    display: none;
+}
+.dot i{
+    cursor: pointer;
+    margin-right: 0.4rem;
+}
+.left{
+    position: absolute;
+    left: 0;
+    top: 45%;
+    padding: 1rem 2rem;
+}
+.right{
+    position: absolute;
+    right: 0;
+    top: 45%;
+    padding: 1rem 2rem;
+}
+.left:hover{
+    background-color: rgba(255, 255, 255, 0.458);
+}
+.right:hover{
+    background-color: rgba(255, 255, 255, 0.458);
+}
+.img-num{
+    position: absolute;
+    color: white;
+    padding: 1rem;
+    font-size: 1.7rem;
+}

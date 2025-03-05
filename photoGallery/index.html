@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/08b0047d25.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <div class="main-container">
+        <div class="image-container ">
+            <div id="1" class="img img1">
+                <div class="img-num">1/4</div>
+                    <i class="fa-solid fa-chevron-left left"></i>
+                    <i class="fa-solid fa-chevron-right right"></i>
+                <div class="number-img"></div>
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div id="2" class="img img2 hidden">
+                <div class="img-num">2/4</div>
+                    <i class="fa-solid fa-chevron-left left"></i>
+                    <i class="fa-solid fa-chevron-right right"></i>
+                
+                <div class="number-img"></div>
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div id="3"  class="img img3 hidden">
+                <div class="img-num">3/4</div>
+                    <i class="fa-solid fa-chevron-left left"></i>
+                    <i class="fa-solid fa-chevron-right right"></i>
+                
+                <div class="number-img"></div>
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div id="4" class="img img4 hidden">
+                <div class="img-num">4/4</div>
+                    
+                    <i class="fa-solid fa-chevron-left left"></i>
+                    <i class="fa-solid fa-chevron-right right"></i>
+                
+                <div class="number-img"></div>
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="dot">
+                <i id="dot1" class="fa-solid fa-circle selected "></i>
+                <i id="dot2" class="fa-regular fa-circle "></i>
+                <i id="dot3" class="fa-regular fa-circle "></i>
+                <i id="dot4" class="fa-regular fa-circle"></i>
+            </div>
+        </div>
+
+    </div>
 </body>
+
 </html>
