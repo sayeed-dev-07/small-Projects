@@ -88,9 +88,10 @@ function changeImgLeftBtn(id){
             changeDot(strImgNum)
             break;
         default:
+            let num = '4'
             img1.classList.add('hidden')
             img4.classList.remove('hidden')
-            changeDot(strImgNum)
+            changeDot(num)
             break;
 
     }
@@ -110,8 +111,6 @@ function changeDot(num){
         case '4':
             changeClassListOfDot('dot4')
             break;
-        case '0':
-            changeSpecial()
         default:
             changeClassListOfDot('dot1')
             break;
@@ -155,3 +154,21 @@ function changeClassListOfDot(name) {
     }
 }
 
+
+
+dots.forEach(dot=>{
+    dot.addEventListener('click',()=>{
+        let index = dot.id.slice(3,4)
+        changeDot(index)
+        changePicture(index)
+    })
+})
+
+function changePicture(idNo){
+    imgContainers.forEach(img=>{
+        img.classList.add('hidden');
+        if(img.id === idNo){
+            img.classList.remove('hidden')
+        }
+    })
+}
